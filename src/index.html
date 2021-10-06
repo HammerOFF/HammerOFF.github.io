@@ -6,14 +6,15 @@
 	<meta name="description" content="Моя визитка">
 	<meta name="author" content="Vlad">
 	<meta name="robots" content="all">
-	
 	<title>Владислав Кищенко - Веб-Разработчик</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<header class="container">
 		<nav>
 			<div class="logo">
-				Владислав Кищенко
+				Влад Кищенко
 			</div>
 			<div class="menu">
 				<ul>
@@ -39,19 +40,21 @@
 			</div>
 		</nav>
 	</header>
-	<section class="container">
+	<section class="container container1">
 		<div class="main">
-			<h1>
-				Привет <br> Я Владислав Кищенко 
-			</h1>
-			<h4>
-				Фулл стек веб-разработчика
-			</h4>
-			<input type="submit" value="Обо мне">
-			<input type="submit" value="Мои работы">
+			<div class="title_container">
+				<h1>
+					Привет <br> Я Влад Кищенко 
+				</h1>
+				<h4>
+					Фулл стек веб-разработчика
+				</h4>
+				<input type="submit" value="Обо мне">
+				<input type="submit" value="Мои работы">
+			</div>
 		</div>
 	</section>
-	<section class="container">
+	<section class="container container2">
 		<div class="resume">
 			<h2>
 				Обо мне
@@ -63,9 +66,9 @@
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos voluptatem quaerat quae provident doloribus inventore quasi deserunt, eaque ipsam, error hic, voluptate, reiciendis maxime. Alias culpa minima nam sequi, accusamus!
 			</p>
 			<input type="submit" value="Скачать резюме">
-		</div>
+		</div>	
 	</section>
-	<section class="container">
+	<section class="container container3">
 		<div class="skills">
 			<h2>
 				Что я умею
@@ -107,7 +110,7 @@
 			
 		</div>
 	</section>
-	<section class="container">
+	<section class="container4">
 		<div class="cases">
 			<h2>
 				Кейсы
@@ -142,7 +145,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="container">
+	<section class="container5">
 		<div class="calculation">
 			<h2>
 				Расчет стоимости
@@ -153,6 +156,7 @@
 				</h3>
 				<form action="#">
 					<select name="list1" id="list" type="text" placeholder="Выберите пункт...">
+						<option value="Opt0" selected="" disabled="">Выберите пункт...</option>
 						<option value="Opt1">Option 1</option>
 						<option value="Opt2">Option 2</option>
 						<option value="Opt3">Option 3</option>
@@ -166,6 +170,7 @@
 				</h3>
 				<form action="#">
 					<select name="list1" id="list" type="text" placeholder="Выберите пункт...">
+						<option value="Opt0" selected="" disabled="">Выберите пункт...</option>
 						<option value="Opt1">Option 1</option>
 						<option value="Opt2">Option 2</option>
 						<option value="Opt3">Option 3</option>
@@ -179,6 +184,7 @@
 				</h3>
 				<form action="#">
 					<select name="list1" id="list" type="text" placeholder="Выберите пункт...">
+						<option value="Opt0" selected="" disabled="">Выберите пункт...</option>
 						<option value="Opt1">Option 1</option>
 						<option value="Opt2">Option 2</option>
 						<option value="Opt3">Option 3</option>
@@ -194,7 +200,7 @@
 			</h4>
 		</div>
 	</section>
-	<section class="container">
+	<section class="container6">
 		<div class="statistics">
 			<h2>
 				НЕМНОГО СТАТИСТИКИ
@@ -236,7 +242,7 @@
 
 		</div>
 	</section>
-	<section class="container">
+	<section class="container7">
 		<div class="reviews">
 			<h2>
 				ОТЗЫВЫ
@@ -245,11 +251,11 @@
 				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque recusandae perferendis unde eos, ducimus minus? Ad vel, dicta incidunt quibusdam!
 			</p>
 			<p>
-				Михаил, Ген директор ПАО"Газпром"
+				<span>Михаил</span>, Ген директор ПАО"Газпром"
 			</p>
 		</div>
 	</section>
-	<section class="container">
+	<section class="container8">
 		<div class="contacts">
 			<h2>
 				МОИ КОНТАКТЫ
@@ -272,12 +278,17 @@
 				ОСТАВТЕ МНЕ СООБЩЕНИЕ
 			</h3>
 			<form action="#">
-				<input type="text" name="name" placeholder="имя">
-				<input type="text" name="Email" placeholder="Email">
+				<input type="text" name="name" placeholder="Имя" class="input input1" >
+				<input type="text" name="Email" placeholder="Email" class="input">
 				<textarea name="" id="" cols="30" rows="10" placeholder="Сообщение"></textarea>
-				<input type="submit" value="Отправить">
+				<input type="submit"  value="Отправить" class="button">>
 			</form>
 		</div>		
+	</section>
+	<section class="container9">
+		<div class="map">
+			<h3>IM HERE</h3>
+		</div>
 	</section>
 	<footer class="container">
 		<p>
@@ -286,3 +297,4 @@
 	</footer>
 </body>
 </html>
+
