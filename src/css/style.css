@@ -2,10 +2,93 @@ body {
 	font-family: Arial, sans-serif;
 }
 
+
+
+/*Загрузчик*/
+
+
+
+.preloader {
+  /*фиксированное позиционирование*/
+  position: fixed;
+  /* координаты положения */
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  /* фоновый цвет элемента */
+  background: #e0e0e0;
+  /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+  z-index: 1001;
+}
+
+.preloader__row {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  text-align: center;
+  animation: preloader-rotate 2s infinite linear;
+}
+
+.preloader__item {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  background-color: #337ab7;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  animation: preloader-bounce 2s infinite ease-in-out;
+}
+
+.preloader__item:last-child {
+  top: auto;
+  bottom: 0;
+  animation-delay: -1s;
+}
+
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-bounce {
+
+  0%,
+  100% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+.loaded_hiding .preloader {
+  transition: 1s opacity;
+  opacity: 0;
+}
+
+.loaded .preloader {
+  display: none;
+}
+
+
+
+/*Загрузчик*/
+
+
+
 nav {
 width: 100%;
 height: 60px;
 background: #344051;
+position: fixed;
 }
 
 .logo {
@@ -14,6 +97,8 @@ background: #344051;
 	line-height: 60px;
 	padding-left: 170px;
 	float: left;
+	animation: comming 2s ease;
+	z-index: 1px;
 }
 
 .menu {
@@ -28,11 +113,48 @@ background: #344051;
 	margin-right: 35px;
 	font-style: 16px;
 	text-transform: uppercase;
+	animation: topshift 0.4s ease forwards;
+	opacity: 0;
+}
+
+.menu ul li:nth-child(2) {
+	animation-delay: 0.4s;
+}
+.menu ul li:nth-child(3) {
+	animation-delay: 0.8s;
+}
+.menu ul li:nth-child(4) {
+	animation-delay: 1.2s;
+}
+.menu ul li:nth-child(5) {
+	animation-delay: 1.6s;
+}
+.menu ul li:nth-child(6) {
+	animation-delay: 2s;
+}
+
+.menu li a {
+	color: white;
+	transition: all 0.1s;
+	display: inline-block;
+	transform: scale(1.0);
+}
+
+.menu li a:visited {
+	color: white;
+}
+
+.menu li a:hover{
+	color: #e88604;
+}
+
+.menu li a:active{
+	transform: scale(1.1);
 }
 
 .container1 {
 	width: 100%;
-	height: 93%;
+	height:100%;
 	background:url(../img/boy.png) 90% 100%/auto 85% no-repeat , url(../img/bg.jpg)center/cover no-repeat;
 }
 
@@ -41,17 +163,17 @@ background: #344051;
 	margin: 270px 0 0px 120px;
 	color: #2c384a;
 	text-align: center;
+	opacity: 0;
+	animation: titlemove 1s ease forwards;
+	animation-delay: 2.4s;
 }
 
-.title_container h1 {
-	font-size: 60px;
-}
+/*.title_container input {
+	transition: all 0.3s;
+	transform: scale(1.0);
+}*/
 
-.title_container h4 {
-	margin-top: 40px;
-	font-size: 22px;
-	color: #79818d;
-}
+
 
 .title_container input {
 	height: 40px;
@@ -63,6 +185,59 @@ background: #344051;
 	font-size: 13px;
 	padding: 0px 16px;
 	margin: 58px 14px 0px 14px;
+	transition: all 0.3s;
+	transform: scale(1.0);
+}
+
+.title_container input:hover {
+	background: #344051;
+	color: white;
+}
+
+.title_container input:active {
+	transform: scale(1.1);
+}
+
+
+.title_container h1 {
+	font-size: 60px;
+}
+
+.title_container h4 {
+	margin-top: 40px;
+	font-size: 22px;
+	color: #79818d;
+}
+
+@keyframes comming {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes topshift {
+	from {
+		opacity: 0;
+		margin-top: -80px;
+	}
+	to{
+		opacity: 1;
+		margin-top: 0;
+	}
+}
+
+@keyframes titlemove {
+	from {
+		opacity: 0;
+		margin-left: -500px;
+	}
+	to{
+		opacity: 1;
+		margin-top: 120;
+	}
 }
 
 .container2 {
@@ -101,12 +276,30 @@ background: #344051;
 	margin-left: 330px;
 	padding-left: 23px;
 	font-size: 15px;
+	transition: all 0.3s;
+	transform: scale(1.0);
+}
+
+.resume input:hover{
+	background: #344051;
+	color: white;
+	padding-right: 99px;
+}
+
+.resume input:active {
+	transform: scale(1.1);
+}
+
+.parallax_1 {
+	background: url(../img/fon2.jpg) center/cover no-repeat;
+	background-attachment: fixed;
+	height: 500px;
 }
 
 .container3 {
 	width: 100%;
 	height: 520px;
-	background: url(../img/computer.png) 20.5% 50% no-repeat, url(../img/rocheta.png) 58% 50% no-repeat, url(../img/signum.png) 39.5% 50% no-repeat, url(../img/gram.png) 77.5% 50% no-repeat, url(../img/linea.jpg) 50% 30% no-repeat, url(../img/fon2.jpg) center/cover no-repeat;
+	background: url(../img/computer.png) 20.5% 50% no-repeat, url(../img/rocheta.png) 58% 50% no-repeat, url(../img/signum.png) 39.5% 50% no-repeat, url(../img/gram.png) 77.5% 50% no-repeat, url(../img/linea.jpg) 50% 30% no-repeat; /*url(../img/fon2.jpg) center/cover no-repeat;*/
 }
 
 .skills{
@@ -128,7 +321,7 @@ background: #344051;
 
 .service {
 	float: left;
-	margin-right: 50px
+	margin-right: 50px;
 }
 
 .services h4 {
@@ -136,6 +329,12 @@ background: #344051;
 	font-size: 22px;
 	color: #cf7600;
 	padding-bottom: 20px;
+	transform: scale(1);
+	/*display: inline-block;*/
+}
+
+.services h4:hover {
+	transform: scale(1.3);
 }
 
 .services p {
@@ -191,6 +390,17 @@ background: #344051;
 	height: 45px;
 	border-radius: 5px;
 	font-size: 18px;
+	transition: all 0.3s;
+	transform: scale(1.0);
+}
+
+.client input:hover{
+	background: #ee7a37;
+	color: white;
+}
+
+.client input:active {
+	transform: scale(1.1);
 }
 
 .project {	
@@ -251,10 +461,16 @@ background: #344051;
 	padding: 0 0 30px 270px;
 }
 
+.parallax_2 {
+	background: url(../img/fon6.jpg)center/cover no-repeat;
+	background-attachment: fixed;
+	height: 500px;
+}
+
 .container6 {
 	width: 100%;
 	height: 500px;
-	background: url(../img/staples.png) 41% 57% no-repeat, url(../img/check.png) 62.9% 57% no-repeat, url(../img/smile.png) 19.5% 57% no-repeat, url(../img/cup.png) 85% 57% no-repeat, url(../img/linea.jpg) 50% 33% no-repeat, url(../img/fon6.jpg)center/cover no-repeat;
+	background: url(../img/staples.png) 41% 57% no-repeat, url(../img/check.png) 62.9% 57% no-repeat, url(../img/smile.png) 19.5% 57% no-repeat, url(../img/cup.png) 85% 57% no-repeat, url(../img/linea.jpg) 50% 33% no-repeat; /*url(../img/fon6.jpg)center/cover no-repeat;*/
 }
 
 .statistics>h2 {
@@ -278,6 +494,13 @@ background: #344051;
 	font-size: 30px;
 	font-weight: bold;
 	padding-bottom: 30px;
+	transform: scale(1.0);
+}
+
+
+
+.advantages1 h2:hover {
+	transform: scale(1.3);
 }
 
 .advantages1 p {
@@ -341,6 +564,11 @@ background: #344051;
 	color: #fff;
 	margin-right: 125px;
 	font-style: 16px;
+	transform: scale(1.0);
+}
+
+.contacts ul li:hover {
+	transform: scale(1.3);
 }
 
 .contacts h3 {
@@ -398,6 +626,17 @@ background: #344051;
 	font-size: 17px;
 	padding-right: 6px;
 	margin: 0 auto;
+	transform: scale(1.0);
+	transition: all 0.3s;
+}
+
+.contacts .button:hover {
+	background: #63b5ae;
+	color: white;
+}
+
+.contacts .button:active {
+	transform: scale(1.1);
 }
 
 .container9 {
