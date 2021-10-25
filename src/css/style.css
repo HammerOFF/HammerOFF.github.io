@@ -7,7 +7,7 @@ width: 100%;
 height: 60px;
 background: #344051;
 position: fixed;
-z-index: 2;
+/*z-index: 2;*/
 }
 
 .logo {
@@ -35,3 +35,46 @@ z-index: 2;
 	color: white;
 	text-decoration: none;
 }
+
+.white-btn {
+	color: white;
+}
+
+.dropdown-menu li a {
+	text-decoration: none;
+}
+
+.title_container {
+	float: left;
+	/*margin: 270px 0 0px 120px;*/
+	color: #2c384a;
+	text-align: center;
+	/*opacity: 0;
+	animation: titlemove 1s ease forwards;
+	animation-delay: 2.4s;*/
+}
+
+.title_container input {
+	height: 40px;
+	text-align: center;
+	border: 2px solid #6d7682;
+	background: none;
+	border-radius: 5px;
+	color: #6d7682;
+	font-size: 13px;
+	padding: 0px 16px;
+	margin: 58px 14px 0px 14px;
+	/*transition: all 0.3s;
+	transform: scale(1.0);*/
+}
+
+.title_container h1 {
+	font-size: 60px;
+}
+
+.title_container h4 {
+	margin-top: 40px;
+	font-size: 22px;
+	color: #79818d;
+}
+
